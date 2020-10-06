@@ -9,6 +9,10 @@ public class Convert_mi_to_km {
         Scanner in = new Scanner(System.in);
         System.out.print("Input number of miles: ");
         mi = in.nextDouble();
+        if(mi<0){
+            System.out.println("Incorrect input.");
+            return;
+        }
         km = mi/1.609;
         System.out.println("In kilometers: "+ km);
         mi = 1.609*km;

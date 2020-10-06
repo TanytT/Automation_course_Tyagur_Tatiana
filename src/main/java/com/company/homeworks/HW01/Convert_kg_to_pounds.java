@@ -8,6 +8,10 @@ public class Convert_kg_to_pounds {
         Scanner in = new Scanner(System.in);
         System.out.print("Input number of kilograms: ");
         kg = in.nextDouble();
+        if (kg<0){
+            System.out.println("Incorrect input.");
+            return;
+        }
         pound = kg/2.2046;
         System.out.println("In pounds: "+ pound);
         kg = 2.2046*pound;

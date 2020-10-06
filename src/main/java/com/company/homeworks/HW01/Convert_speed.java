@@ -8,6 +8,10 @@ public class Convert_speed {
         Scanner in = new Scanner(System.in);
         System.out.print("Input speed in km/hr: ");
         km_hr = in.nextDouble();
+        if (km_hr<0){
+            System.out.println("Incorrect input.");
+            return;
+        }
         mi_hr = km_hr/0.6214;
         System.out.println("Speed in mi/hr: "+ mi_hr);
         km_hr = 0.6214*mi_hr;

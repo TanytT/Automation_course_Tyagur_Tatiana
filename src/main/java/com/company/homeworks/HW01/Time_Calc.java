@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class Time_Calc {
     public static void main(String[] args) {
-        int sec=0;
-        int days=0;
-        int hours=0;
-        int min=0;
+        int sec, days, hours, min;
         Scanner in = new Scanner(System.in);
         System.out.print("Input number of days: ");
         days = in.nextInt();
+        if (days<0){
+            System.out.println("Incorrect input.");
+            return;
+        }
         hours = days*24;
         System.out.println("Number of hours: " + hours);
         min = hours*60;
@@ -20,6 +21,10 @@ public class Time_Calc {
  //-------------------seconds-to-time-----------------------------------------
         System.out.println("Input number of seconds: ");
         int sec1 = in.nextInt();
+        if (sec1<0){
+            System.out.println("Incorrect input.");
+            return;
+        }
         int min1 = sec1/60;
         int hour1 = min1/60;
         int days1 = hour1/24;

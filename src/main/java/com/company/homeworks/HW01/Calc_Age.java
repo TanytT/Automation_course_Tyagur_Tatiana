@@ -8,10 +8,18 @@ public class Calc_Age {
         int my_day, my_mon,my_year;
         Scanner in = new Scanner(System.in);
         System.out.print("Input your date of birthday:");
-        System.out.println("Day: ");
+        System.out.println("\nDay: ");
         my_day = in.nextInt();
+        if ((my_day<=0)||(my_day>=32)){
+            System.out.println("Incorrect data.");
+            return;
+        }
         System.out.println("Number of month: ");
         my_mon = in.nextInt();
+        if ((my_mon<=0)||(my_mon>12)){
+            System.out.println("Incorrect data.");
+            return;
+        }
         System.out.println("Year: ");
         my_year = in.nextInt();
 
