@@ -5,7 +5,7 @@ import java.util.Random;
 public class CheckMagnitude {
     public static void main(String[] args) {
         int a = 45;
-        int b = -99;
+        int b = -88;
         if (abs(a)>abs(b)){
             System.out.println("The magnitude of 1 number is greater: "+ abs(a) +">"+ abs(b));
         }else if(abs(a)<abs(b)){

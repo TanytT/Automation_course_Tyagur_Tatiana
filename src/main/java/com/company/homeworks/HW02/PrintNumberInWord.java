@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PrintNumberInWord {
     public static void main(String[] args) {
-        int number= new Random().nextInt(15);
+        int number= new Random().nextInt(13);
         System.out.println(number);
         System.out.println("Use if..else ");
 //////////////////use if else///////////////////////

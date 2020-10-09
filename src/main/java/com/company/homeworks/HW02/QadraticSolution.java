@@ -4,8 +4,8 @@ import static java.lang.Math.*;
 public class QadraticSolution {
     public static void main(String[] args) {
         double a = 10;
-        double b= 30;
-        double c= 5;
+        double b= -25;
+        double c= 8;
         double x1,x2;
         double discr;
         discr=pow(b,2)-4*a*c;

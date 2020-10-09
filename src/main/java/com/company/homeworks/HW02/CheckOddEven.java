@@ -7,7 +7,7 @@ public class CheckOddEven {
         int number = new Random().nextInt(100);
         System.out.println(number);
         if (number%2==1){
-            System.out.println("Odd Number");
+            System.out.println("Odd Number!");
         }else {
             System.out.println("Even Number");
         }

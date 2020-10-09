@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class SolveTheEqual {
     public static void main(String[] args) {
-        double a = new Random().nextInt(100);
+        double a = new Random().nextInt(90);
         double b = new Random().nextInt(100);
         System.out.println(a);
         System.out.println(b);

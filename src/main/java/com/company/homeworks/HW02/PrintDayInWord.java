@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PrintDayInWord {
     public static void main(String[] args) {
-        int day= new Random().nextInt(10);
+        int day= new Random().nextInt(9);
         System.out.println(day);
 ///////////////Use if..else////////////////////////////////////
         System.out.println("Use if..else:");
