@@ -2,8 +2,8 @@ package com.company.infrostructure;
 // Получение значений переменных из окружения
 
 public class ConfigurationManager {
-    private String testBrowser="";
-    private String testEnv="";
+    private String testBrowser="Firefox";
+    private String testEnv="dev";
     private static ConfigurationManager INSTANCE;
 
     private ConfigurationManager(){
@@ -17,11 +17,11 @@ public class ConfigurationManager {
         return INSTANCE;
     }
     public String getTestBrowser(){
-       return testBrowser;
+       return getEnvironmentVariableOrDefault("testBrowser", "Chrome");
     }
 
     public String getTestEnv(){
-        return testEnv;
+        return getEnvironmentVariableOrDefault("testEnv", "production");
     }
 
     private String getEnvironmentVariableOrDefault(String envVar, String defaultValue) {
