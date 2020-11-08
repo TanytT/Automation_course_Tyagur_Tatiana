@@ -1,5 +1,7 @@
 package com.company.homeworks.HW07;
 
+import java.util.Objects;
+
 public class FractionNumbers {
 
     private int numerator ;
@@ -40,6 +42,21 @@ public class FractionNumbers {
     public int getDenominator(){
         return this.denominator;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FractionNumbers that = (FractionNumbers) o;
+        return numerator == that.numerator &&
+                denominator == that.denominator;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
+    }
+
     @Override
     public String toString() {
         return  numerator +
