@@ -1,5 +1,9 @@
 package com.company.infrostructure;
 
+import com.company.infrostructure.logger.FileTestLogger;
+import com.company.infrostructure.logger.StdTestLogger;
+import com.company.infrostructure.logger.TestLogger;
+
 public class TestBase {
 
     private WebDriverManager wdm;
@@ -7,7 +11,7 @@ public class TestBase {
     protected TestLogger logger;
 
     public void setUp(){
-        logger = new TestLogger();
+        logger =getLogger();
         logger.log("Opening browser");
         wdm=new WebDriverManager();
         browser=wdm.createBrowser();
@@ -26,5 +30,10 @@ public class TestBase {
      }
      public void afterTest(){
 
+     }
+     private TestLogger getLogger(){
+        return ConfigurationManager.getInstance().getTestLogger().equals("std") ?
+                new StdTestLogger() :
+                new FileTestLogger("report_"+System.currentTimeMillis()+".txt");
      }
 }

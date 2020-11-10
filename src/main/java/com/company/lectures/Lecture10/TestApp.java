@@ -1,12 +1,13 @@
 package com.company.lectures.Lecture10;
 
-import com.company.infrostructure.TestLogger;
+import com.company.infrostructure.logger.StdTestLogger;
+import com.company.infrostructure.logger.TestLogger;
 import com.company.infrostructure.TestServer;
 import com.company.infrostructure.WebDriverManager;
 
 public class TestApp {
     public static void main(String[] args) {
-        TestLogger logger = new TestLogger();
+        TestLogger logger = new StdTestLogger();
         WebDriverManager wdm = new WebDriverManager();
 
         logger.log("Opening browser: ");
