@@ -32,6 +32,10 @@ public class ConfigurationManager {
 
         return getEnvironmentVariableOrDefault("testLogger","std");
     }
+    public String getMobilePlatform(){
+        return getEnvironmentVariableOrDefault("mobilePlatform","android" );
+    }
+
     private String getEnvironmentVariableOrDefault(String envVar, String defaultValue) {
        return System.getenv(envVar) !=null&& !System.getenv(envVar).isBlank() ?
                System.getenv(envVar): defaultValue;

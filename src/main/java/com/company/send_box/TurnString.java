@@ -6,11 +6,15 @@ public class TurnString {
     public static void main(String[] args) {
         //для переворачивания строки, изменив расположение символов в строке задом
         // наперёд без использования встроенных в String функций.
-        String str = "Hello world!";
+        String str = "flying like I";
         System.out.println(str);
-        String stRez="" ;
-        for (int i = 0; i < str.length(); i++) {
-            stRez+=str.charAt(str.length()-1-i);
+        String stRez ="";
+
+        String arrS[];//=new String[str.length()];
+
+        arrS = str.split("\\s");
+        for (int p = 0; p < arrS.length; p++) {
+                stRez+=arrS[arrS.length-1-p]+" ";
         }
         System.out.println(stRez);
         System.out.println();
