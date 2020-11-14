@@ -3,25 +3,26 @@ package com.company.infrostructure;
 import com.company.infrostructure.logger.FileTestLogger;
 import com.company.infrostructure.logger.StdTestLogger;
 import com.company.infrostructure.logger.TestLogger;
+import com.company.infrostructure.webDriver.DefaultWebDriverManager;
 
 public class TestBase {
 
-    private WebDriverManager wdm;
+    private DefaultWebDriverManager wdm;
     protected String browser;
     protected TestLogger logger;
 
     public void setUp(){
         logger =getLogger();
         logger.log("Opening browser");
-        wdm=new WebDriverManager();
-        browser=wdm.createBrowser();
+        wdm=new DefaultWebDriverManager();
+        browser=wdm.getBrowser();
         logger.log("Open site");
         beforeTest();
 
     }
      public void cleanUp(){
         afterTest();
-        wdm.closeBrowser(browser);
+        wdm.destroyBrowser(browser);
 
      }
 

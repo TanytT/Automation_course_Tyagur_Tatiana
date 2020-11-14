@@ -3,16 +3,15 @@ package com.company.lectures.Lecture10;
 import com.company.infrostructure.logger.StdTestLogger;
 import com.company.infrostructure.logger.TestLogger;
 import com.company.infrostructure.TestServer;
-import com.company.infrostructure.WebDriverManager;
 
 public class TestApp {
     public static void main(String[] args) {
         TestLogger logger = new StdTestLogger();
-        WebDriverManager wdm = new WebDriverManager();
+        //WebDriverManager wdm = new WebDriverManager();
 
         logger.log("Opening browser: ");
-        String browser = wdm.createBrowser();
-        System.out.println("Opened browser "+browser);
+        //String browser = wdm.createBrowser();
+        //System.out.println("Opened browser "+browser);
 
         logger.log("Opening site ");
         String site = TestServer.getURL();
@@ -27,7 +26,7 @@ public class TestApp {
         logger.log("Check ");
 
         logger.log("Closing browser");
-        wdm.closeBrowser(browser);
+        //wdm.closeBrowser(browser);
 
 
 
