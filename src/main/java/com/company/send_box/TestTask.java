@@ -2,13 +2,18 @@ package com.company.send_box;
 
 public class TestTask {
     public static void main(String[] args) {
-
+        int []array=new int[]{1};
         System.out.println(areYouPlayingBanjo("Martin"));
         int [] val = {6, 7, 8, 7, 6, 6};
         System.out.println(minValue(val));
 
         System.out.println(cockroachSpeed(1.08));
-        //System.out.println(Goals.totalGoals);
+        System.out.println();
+        for(int i=1;i<array.length;i++){
+            if(array[i]!=array[i-1]+1){
+                System.out.println("Element="+array[i]);
+            }
+        }
 
     }
     public static String areYouPlayingBanjo(String name) {
