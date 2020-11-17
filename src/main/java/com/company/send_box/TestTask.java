@@ -1,6 +1,6 @@
 package com.company.send_box;
 
-public class TestTask extends Goals{
+public class TestTask {
     public static void main(String[] args) {
 
         System.out.println(areYouPlayingBanjo("Martin"));
@@ -8,7 +8,7 @@ public class TestTask extends Goals{
         System.out.println(minValue(val));
 
         System.out.println(cockroachSpeed(1.08));
-        System.out.println(Goals.totalGoals);
+        //System.out.println(Goals.totalGoals);
 
     }
     public static String areYouPlayingBanjo(String name) {
