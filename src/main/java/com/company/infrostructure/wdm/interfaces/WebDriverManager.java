@@ -1,4 +1,4 @@
-package com.company.infrostructure.webDriver.interfaces;
+package com.company.infrostructure.wdm.interfaces;
 
 public interface WebDriverManager {
     String getBrowser();

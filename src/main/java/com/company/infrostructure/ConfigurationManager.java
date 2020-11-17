@@ -36,7 +36,7 @@ public class ConfigurationManager {
         return getEnvironmentVariableOrDefault("mobilePlatform","android" );
     }
 
-    public String getWebDriver(){
+    public String getRunOn(){
         return getEnvironmentVariableOrDefault("runOn", "local");
     }
 

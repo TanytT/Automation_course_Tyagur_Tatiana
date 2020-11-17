@@ -3,7 +3,7 @@ package com.company.infrostructure;
 import com.company.infrostructure.logger.FileTestLogger;
 import com.company.infrostructure.logger.StdTestLogger;
 import com.company.infrostructure.logger.TestLogger;
-import com.company.infrostructure.webDriver.DefaultWebDriverManager;
+import com.company.infrostructure.wdm.DefaultWebDriverManager;
 
 public class TestBase {
 
