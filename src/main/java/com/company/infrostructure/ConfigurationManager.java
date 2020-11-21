@@ -36,6 +36,10 @@ public class ConfigurationManager {
         return getEnvironmentVariableOrDefault("mobilePlatform","android" );
     }
 
+    public String getRunOn(){
+        return getEnvironmentVariableOrDefault("runOn", "local");
+    }
+
     private String getEnvironmentVariableOrDefault(String envVar, String defaultValue) {
        return System.getenv(envVar) !=null&& !System.getenv(envVar).isBlank() ?
                System.getenv(envVar): defaultValue;
