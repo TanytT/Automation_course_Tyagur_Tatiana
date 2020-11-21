@@ -8,14 +8,14 @@ public class DefaultWebDriverManager implements WebDriverManager {
     @Override
     public String getBrowser() {
         WebDriverFactory factory;
-        switch (ConfigurationManager.getInstance().getRunOn()){
-            case "local":
+        switch (RunOn.valueOf(ConfigurationManager.getInstance().getRunOn())){
+            case LOCAL:
                 factory=new LocalWebDriverFactory();
                 break;
-            case"remote":
+            case REMOTE:
                 factory = new RemoteWebDriverFactory();
                 break;
-            case "cloud":
+            case CLOUD:
                 factory = new CloudWebDriverFactory();
                 break;
             default:
