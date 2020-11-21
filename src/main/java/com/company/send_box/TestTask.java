@@ -1,5 +1,7 @@
 package com.company.send_box;
 
+import com.company.lectures.lecture06.Arrays;
+
 public class TestTask {
     public static void main(String[] args) {
         int []array=new int[]{1};
@@ -14,6 +16,15 @@ public class TestTask {
                 System.out.println("Element="+array[i]);
             }
         }
+        System.out.println(expressionsMatter(5,5,6));
+        System.out.println(expressionsMatter1(5,5,6));
+        System.out.println(expressionsMatter1(1,1,1));
+        System.out.println(expressionsMatter2(5,5,6));
+        System.out.println(expressionsMatter2(1,1,1));
+
+        System.out.println(abbrevName("Sam Harris"));
+        System.out.println(abbrevName("Patrick Feenan"));
+        //System.out.println(check(new Object[] {"what", "a", "great", "kata"}, "kat"), false));
 
     }
     public static String areYouPlayingBanjo(String name) {
@@ -53,6 +64,64 @@ public class TestTask {
     public static int cockroachSpeed(double x){
         System.out.println(x*1000.0/3600.0);
         return (int)(x*1000.0/3600.0);
+    }
+    public static int expressionsMatter(int a, int b, int c)
+    {
+        int max=a*(b+c);
+        if(max<a*b*c){
+            max=a*b*c;
+            if(max<a+b+c){
+                max=a+b+c;
+            }
+        }else if(max<a+b+c){
+            max= a+b+c;
+        }
+        if(a+b*c<(a+b)*c){
+            if(max<(a+b)*c){
+                max=(a+b)*c;
+            }
+        }else if(max<a+b*c) {
+            max=a+b*c;
+        }
+        return max;
+    }
+    public static int expressionsMatter1(int a, int b, int c)
+    {
+
+        int[] arr= {a*(b+c), a*b*c, a+b+c, (a+b)*c, a+b*c };
+        int max = arr[0];
+        for (int i = 1; i < 5; i++) {
+            if(max<arr[i]){
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static int expressionsMatter2(int a, int b, int c)
+    {
+         return Math.max(Math.max(Math.max(Math.max(a*(b+c),a*b*c),a+b+c),(a+b)*c),a+b*c);
+    }
+
+    public static String abbrevName(String name) {
+        String [] res =name.split(" ");
+        return res[0].substring(0,1).toUpperCase()+"."+res[1].substring(0,1).toUpperCase();
+    }
+    public static boolean check(Object[] a, Object x) {
+        for (int i = 0; i < a.length; i++) {
+            if(a[i].equals(x)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean check1(Object[] a, Object x) {
+        for (Object s: a) {
+            if(s.equals(a))
+            return true;
+        }
+        return false;
     }
 
 }
