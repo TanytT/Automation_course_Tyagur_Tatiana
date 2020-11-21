@@ -9,6 +9,7 @@ public class TestURL {
 
 
     private TestURL() {
+
     }
 
      public String getProtocol() {
