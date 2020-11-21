@@ -8,18 +8,10 @@ public class TestURL {
     private String params;
 
 
-    public TestURL() {
+    private TestURL() {
     }
 
-    public TestURL(String protocol, String domain, String port, String path, String params) {
-        this.protocol = protocol;
-        this.domain = domain;
-        this.port = port;
-        this.path = path;
-        this.params = params;
-    }
-
-    public String getProtocol() {
+     public String getProtocol() {
         return protocol;
     }
 
