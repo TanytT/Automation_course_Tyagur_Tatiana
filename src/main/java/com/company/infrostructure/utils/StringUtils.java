@@ -3,23 +3,27 @@ package com.company.infrostructure.utils;
 import java.util.Random;
 
 public class StringUtils {
-    public static String randomString(String mode, int length){
-        String result = "" ;
+
+    public enum Mode{
+        ALPHA, NUMERIC, ALPHANUMERIC, HEX
+    }
+
+    public static String randomString(Mode mode, int length){
+        String result="";
         String abc="";
         switch(mode){
-            case "alpha":
+            case ALPHA:
                 abc="abcdefghijklmnopqrstuvwxyz";
                 break;
-            case "numeric":
+            case NUMERIC:
                 abc="1234567890";
                 break;
-            case "alphanumeric":
+            case ALPHANUMERIC:
                 abc="abcdefghijklmnopqrstuvwxyz1234567890";
                 break;
-            case "hex":
+            case HEX:
                 abc="0123456789ABCDEF";
                 break;
-            default:
 
         }
         for (int i = 0; i < length; i++) {
