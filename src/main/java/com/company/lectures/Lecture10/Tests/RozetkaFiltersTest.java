@@ -1,6 +1,6 @@
 package com.company.lectures.Lecture10.Tests;
 
-import com.company.infrostructure.TestBase;
+import com.company.infrostructure.base.TestBase;
 
 public class RozetkaFiltersTest extends TestBase {
 

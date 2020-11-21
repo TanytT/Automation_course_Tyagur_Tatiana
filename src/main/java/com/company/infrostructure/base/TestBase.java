@@ -1,5 +1,7 @@
-package com.company.infrostructure;
+package com.company.infrostructure.base;
 
+import com.company.infrostructure.WebDriverManager;
+import com.company.infrostructure.config.ConfigurationManager;
 import com.company.infrostructure.logger.FileTestLogger;
 import com.company.infrostructure.logger.StdTestLogger;
 import com.company.infrostructure.logger.TestLogger;

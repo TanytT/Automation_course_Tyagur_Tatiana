@@ -1,13 +1,54 @@
 package com.company.infrostructure;
 
 public class TestURL {
-    private String protocol;
-    private String domain;
-    private String port;
-    private String path;
-    private String param;
-    private String keyValueParam;
+    private String protocol="";
+    private String domain="";
+    private String port="";
+    private String path="";
+    private String params;
 
+
+    public TestURL() {
+    }
+
+    public TestURL(String protocol, String domain, String port, String path, String params) {
+        this.protocol = protocol;
+        this.domain = domain;
+        this.port = port;
+        this.path = path;
+        this.params = params;
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public String getParams() {
+        return params;
+    }
+
+    @Override
+    public String toString() {
+        return "TestURL{" +
+                "protocol='" + protocol + '\'' +
+                ", domain='" + domain + '\'' +
+                ", port='" + port + '\'' +
+                ", path='" + path + '\'' +
+                ", params='" + params + '\'' +
+                '}';
+    }
 
     public static class Builder {
 
@@ -39,12 +80,12 @@ public class TestURL {
         }
 
         public Builder withParam(String param) {
-            testUrl.param = (testUrl.param==null ? "" : testUrl.param+"&") + param;
+            testUrl.params = (testUrl.params==null ? "" : testUrl.params+"&") + param;
             return this;
         }
 
         public Builder withParam(String key, String value) {
-            testUrl.keyValueParam =(testUrl.keyValueParam==null ? "" : testUrl.keyValueParam+"&") +  key+ "="+value;
+            testUrl.params =(testUrl.params==null ? "" : testUrl.params+"&") +  key+ "="+value;
              return this;
         }
 
@@ -55,8 +96,7 @@ public class TestURL {
                 +(testUrl.domain==null ? "" : testUrl.domain)
                 +(testUrl.port==null ? "" : ":"+testUrl.port)
                 +(testUrl.path==null ? "" : "/"+testUrl.path)
-                +(testUrl.param==null ? "" : "?"+testUrl.param)
-                +(testUrl.param==null ? (testUrl.keyValueParam==null ? "": "?"+testUrl.keyValueParam) : (testUrl.keyValueParam==null ? "": "&"+testUrl.keyValueParam));
+                +(testUrl.params==null ? "" : "?"+testUrl.params);
         }
     }
 }

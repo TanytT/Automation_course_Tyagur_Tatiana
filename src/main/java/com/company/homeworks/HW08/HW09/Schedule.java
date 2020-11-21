@@ -1,6 +1,6 @@
 package com.company.homeworks.HW08.HW09;
 
-import com.company.infrostructure.TestBase;
+import com.company.infrostructure.base.TestBase;
 
 public class Schedule extends TestBase {
 

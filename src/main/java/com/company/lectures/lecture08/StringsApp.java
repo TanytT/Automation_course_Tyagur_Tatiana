@@ -1,6 +1,6 @@
 package com.company.lectures.lecture08;
 
-import com.company.infrostructure.StringUtils;
+import com.company.infrostructure.utils.StringUtils;
 
 public class StringsApp {
     public static void main(String[] args) {

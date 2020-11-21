@@ -7,7 +7,7 @@ public class Url {
         String testUrl = new TestURL.Builder()
                 .withProtocol("http")
                 .withDomain("google.com")
-               .withPort("80")
+                .withPort("80")
                 .withPath("user")
                 .withParam("2896")
                 .withParam("param2","567")

@@ -1,5 +1,7 @@
 package com.company.infrostructure;
 
+import com.company.infrostructure.config.ConfigurationManager;
+
 public class WebDriverManager {
 
     public String createBrowser(){

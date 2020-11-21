@@ -1,7 +1,5 @@
 package com.company.lectures.Lecture10.Tests;
 
-import com.company.infrostructure.TestBase;
-
 public class MyOrders extends ClientTestBase {
 
     @Override
