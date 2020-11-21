@@ -1,7 +1,5 @@
-package com.company.infrostructure;
+package com.company.infrostructure.config;
 // Получение значений переменных из окружения
-
-import com.company.infrostructure.logger.TestLogger;
 
 public class ConfigurationManager {
     private String testBrowser="Firefox";

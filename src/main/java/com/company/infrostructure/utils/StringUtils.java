@@ -1,4 +1,4 @@
-package com.company.infrostructure;
+package com.company.infrostructure.utils;
 
 import java.util.Random;
 

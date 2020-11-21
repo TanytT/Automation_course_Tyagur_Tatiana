@@ -1,6 +1,6 @@
 package com.company.lectures.Lecture12.mobile;
 
-import com.company.infrostructure.ConfigurationManager;
+import com.company.infrostructure.config.ConfigurationManager;
 import com.company.lectures.Lecture12.mobile.android.AndroidApp;
 import com.company.lectures.Lecture12.mobile.interfaces.MobileApp;
 import com.company.lectures.Lecture12.mobile.ios.IosApp;
