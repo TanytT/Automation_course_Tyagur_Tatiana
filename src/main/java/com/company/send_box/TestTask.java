@@ -25,6 +25,19 @@ public class TestTask {
         System.out.println(abbrevName("Sam Harris"));
         System.out.println(abbrevName("Patrick Feenan"));
         //System.out.println(check(new Object[] {"what", "a", "great", "kata"}, "kat"), false));
+        String string = "1A2B3C4D5sE23.af";
+        String res="";
+        char arr[]=string.toCharArray();
+        for(int j=0; j<arr.length;j++){
+            if((int)arr[j]>=65&&(int)arr[j]<=90){
+                arr[j]+=32;
+            }else if((int)arr[j]>=97&&(int)arr[j]<=122){
+                arr[j]-=32;
+            }
+            res+=arr[j];
+        }
+
+        System.out.println(res);
 
     }
     public static String areYouPlayingBanjo(String name) {
@@ -122,6 +135,12 @@ public class TestTask {
             return true;
         }
         return false;
+    }
+    public static String toAlternativeString(String string) {
+        String res="";
+        res=string.replaceAll("[a-z]","".toUpperCase());
+        System.out.println(res);
+      return res;
     }
 
 }
