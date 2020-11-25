@@ -6,7 +6,7 @@ import com.company.infrostructure.wdm.interfaces.WebDriverFactory;
 public class LocalWebDriverFactory implements WebDriverFactory {
     @Override
     public String create() {
-        switch (BrowserType.valueOf(ConfigurationManager.getInstance().getTestBrowser())){
+        switch (BrowserType.valueOf(ConfigurationManager.getInstance().getTestBrowser().toUpperCase())){
             case CHROME:
                 return "Local Google Chrome"; //return new ChromeDriver();
             case FIREFOX:

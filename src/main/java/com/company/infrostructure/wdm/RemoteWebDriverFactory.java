@@ -6,7 +6,7 @@ import com.company.infrostructure.wdm.interfaces.WebDriverFactory;
 public class RemoteWebDriverFactory implements WebDriverFactory {
     @Override
     public String create() {
-        switch (BrowserType.valueOf(ConfigurationManager.getInstance().getTestBrowser())){
+        switch (BrowserType.valueOf(ConfigurationManager.getInstance().getTestBrowser().toUpperCase())){
             case CHROME:
                 return "Remote Google Chrome"; //return new RemoteDriver(url, config);
             case FIREFOX:
