@@ -1,10 +1,12 @@
 package com.company.infrostructure.data;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileUserDataMapper implements UserDataMapper{
 
-    private User[] user = new User[6];
+    private List<User> user = new ArrayList<>();
 
     public FileUserDataMapper(String userFile) {
 
@@ -12,16 +14,9 @@ public class FileUserDataMapper implements UserDataMapper{
             BufferedReader br = new BufferedReader(fr)) {
 
             String line;
-
             while((line=br.readLine())!=null){
                 String[] parts = line.split(",");
-
-                for (int i = 0; i < user.length; i++) {
-                    if(user[i]==null){
-                        user[i]=new User(parts[0],parts[1],parts[2],parts[3] );
-                        break;
-                    }
-                }
+                user.add(new User(parts[0],parts[1],parts[2],parts[3]));
             }
         } catch (Exception e) {
             e.printStackTrace();
