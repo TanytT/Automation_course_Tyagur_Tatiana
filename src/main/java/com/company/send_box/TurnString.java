@@ -1,5 +1,8 @@
 package com.company.send_box;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class TurnString {
@@ -89,10 +92,51 @@ public class TurnString {
         for (int i = 0; i <arrCh.length ; i++) {
             System.out.print(arrCh[i]);
         }
+        System.out.println();
+        System.out.println(Arrays.toString(digitize1(13256)));
+        System.out.println();
+        digitize(13256);
+        System.out.println(remove("eloquent"));
+        System.out.println(sum(Arrays.asList(9, 3, "7", "3")));
 
 
+    }
+    public static int sum(List<?> mixed) {
+        int sum=0;
+        for(Object str: mixed){
+            sum+=Integer.valueOf(str+"");
+        }
+        return sum;
+    }
 
 
+    public static String remove(String str) {
 
+        return str.substring(1,(str.length()-1));
+    }
+    public static int[] digitize1(long n) {
+
+        int [] resInt =  new int[(n+"").length()];
+        int i=0;
+        while(n>0){
+            resInt[i]=(int)(n%10);
+            n/=10;
+            i++;
+        }
+
+        return resInt;
+    }
+    public static int[] digitize(long n) {
+        int lng=(n+"").length();
+
+        String str = n+"";
+        int [] resInt =  new int[lng];
+        int m=0;
+        while(m<lng){
+            resInt[m]=str.charAt(lng-m-1)-'0';
+            m++;
+        }
+
+        return resInt;
     }
 }
