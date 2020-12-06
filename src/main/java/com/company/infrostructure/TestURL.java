@@ -1,15 +1,18 @@
 package com.company.infrostructure;
 
+import java.util.HashMap;
+import java.util.Iterator;
+
 public class TestURL {
     private String protocol="";
     private String domain="";
     private String port="";
     private String path="";
-    private String params;
+    private HashMap<String, String> params;
 
 
     private TestURL() {
-
+        params = new HashMap<>();
     }
 
      public String getProtocol() {
@@ -28,7 +31,7 @@ public class TestURL {
         return path;
     }
 
-    public String getParams() {
+    public HashMap<String, String> getParams() {
         return params;
     }
 
@@ -72,24 +75,29 @@ public class TestURL {
             return this;
         }
 
-        public Builder withParam(String param) {
-            testUrl.params = (testUrl.params==null ? "" : testUrl.params+"&") + param;
+        public Builder withParam(HashMap<String, String> param) {
+            Iterator <String> iterator = param.keySet().iterator();
+            while (iterator.hasNext()) {
+                String key = iterator.next();
+                testUrl.params.put(key,param.get(key));
+            }
             return this;
         }
 
-        public Builder withParam(String key, String value) {
-            testUrl.params =(testUrl.params==null ? "" : testUrl.params+"&") +  key+ "="+value;
-             return this;
-        }
-
-
         public String build() {
+            Iterator <String> iterator = testUrl.params.keySet().iterator();
+            String resParam="";
+
+            while (iterator.hasNext()){
+                String key = iterator.next();
+                resParam = resParam+key+"="+testUrl.params.get(key)+"&";
+            }
 
         return (testUrl.protocol==null ? "" : testUrl.protocol+"://")
                 +(testUrl.domain==null ? "" : testUrl.domain)
                 +(testUrl.port==null ? "" : ":"+testUrl.port)
                 +(testUrl.path==null ? "" : "/"+testUrl.path)
-                +(testUrl.params==null ? "" : "?"+testUrl.params);
+                +(testUrl.params.isEmpty() ? "" : "?"+resParam);
         }
     }
 }
