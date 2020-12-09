@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Message type="Type of message">
+    <DateTime>2019-04-18T12:10:27+1000</DateTime>
+    <CustomerId>YISEBC</CustomerId>
+    <CompanyName>New Company Name</CompanyName>
+    <CustomerNumber>32423</CustomerNumber>
+    <MessageDetails>
+        <MessageId>677</MessageId>
+        <Datatype>DTTR</Datatype>
+        <Type>New type</Type>
+        <DatatypeDescription>IFTI from ITF</DatatypeDescription>
+        <OriginalFilename>neq_mt33_6235935321.txt.ENC</OriginalFilename>
+    </MessageDetails>
+    <Issues>
+        <Issue type="1">THE BELOW INTERNATIONAL FUNDS TRANSFER HAS BEEN SENT TO SWIFT ADDRESS</Issue>
+        <Issue type="2">YOUR VALUE OF AMOUNT IS INCORRECT</Issue>
+        <Issue type="5">New Issue Value</Issue>
+    </Issues>
+</Message>
