@@ -4,8 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.openqa.selenium.Keys;
-import static org.testng.Assert.*;
-
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class GoogleSearch extends BaseUiTest{
 
@@ -23,7 +22,7 @@ public class GoogleSearch extends BaseUiTest{
     @Test
     public void positiveTestSearch(){
         driver.findElement(By.xpath("//input[@name='q']")).sendKeys(search + Keys.ENTER);
-        assertTrue(driver.findElement(By.id("result-stats")).getText().contains("Результатов"));
+        wait.until(presenceOfElementLocated(By.xpath("//div[@id='result-stats']")));
 
         int cnt = 1;
 
@@ -34,7 +33,7 @@ public class GoogleSearch extends BaseUiTest{
             } else {
                 if(cnt<5) {
                     driver.findElement(By.xpath("//a[@id='pnnext']")).sendKeys(Keys.ENTER);
-                    assertTrue(driver.findElement(By.id("result-stats")).getText().contains("страница " + (cnt+1)));
+                    wait.until(presenceOfElementLocated(By.xpath("//td[contains(text(),'"+(cnt+1)+"')]")));
                 }else{
                     System.out.println(msg);
                 }

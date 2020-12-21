@@ -29,8 +29,10 @@ public class LoginLogoutTests extends BaseUiTest {
 
         WebElement logoutButton = wait.until(presenceOfElementLocated(By.xpath("//a[@href='Logout.php' ]")));
         logoutButton.click();
-        alertFunc(posit_msg);
-        checkPageLoginIsOpen();
+        assertEquals(driver.switchTo().alert().getText(),posit_msg);
+        driver.switchTo().alert().accept();
+        assertEquals(driver.getCurrentUrl(), url);
+        wait.until(presenceOfElementLocated(By.name("btnLogin")));
     }
     @Test
     public void negativeTestWrongPassword(){
@@ -38,8 +40,10 @@ public class LoginLogoutTests extends BaseUiTest {
         driver.findElement(By.xpath("//input [@name ='password' ]")).sendKeys(invalid_passw);
         driver.findElement(By.name("btnLogin")).click();
 
-        alertFunc(negative_msg);
-        checkPageLoginIsOpen();
+        assertEquals(driver.switchTo().alert().getText(),negative_msg);
+        driver.switchTo().alert().accept();
+        assertEquals(driver.getCurrentUrl(), url);
+        wait.until(presenceOfElementLocated(By.name("btnLogin")));
     }
 
     @Test
@@ -48,8 +52,10 @@ public class LoginLogoutTests extends BaseUiTest {
         driver.findElement(By.xpath("//input [@name ='password' ]")).sendKeys(password);
         driver.findElement(By.name("btnLogin")).click();
 
-        alertFunc(negative_msg);
-        checkPageLoginIsOpen();
+        assertEquals(driver.switchTo().alert().getText(),negative_msg);
+        driver.switchTo().alert().accept();
+        assertEquals(driver.getCurrentUrl(), url);
+        wait.until(presenceOfElementLocated(By.name("btnLogin")));
     }
 
     @Test
@@ -57,8 +63,10 @@ public class LoginLogoutTests extends BaseUiTest {
         driver.findElement(By.xpath("//input [@name ='password' ]")).sendKeys(password);
         driver.findElement(By.name("btnLogin")).click();
 
-        alertFunc(negative_msg);
-        checkPageLoginIsOpen();
+        assertEquals(driver.switchTo().alert().getText(),negative_msg);
+        driver.switchTo().alert().accept();
+        assertEquals(driver.getCurrentUrl(), url);
+        wait.until(presenceOfElementLocated(By.name("btnLogin")));
     }
 
     @Test
@@ -66,16 +74,20 @@ public class LoginLogoutTests extends BaseUiTest {
         driver.findElement(By.name("uid")).sendKeys(login);
         driver.findElement(By.name("btnLogin")).click();
 
-        alertFunc(negative_msg);
-        checkPageLoginIsOpen();
+        assertEquals(driver.switchTo().alert().getText(),negative_msg);
+        driver.switchTo().alert().accept();
+        assertEquals(driver.getCurrentUrl(), url);
+        wait.until(presenceOfElementLocated(By.name("btnLogin")));
     }
 
     @Test
     public void negativeTestBlankPasswordLogin(){
         driver.findElement(By.name("btnLogin")).click();
 
-        alertFunc(negative_msg);
-        checkPageLoginIsOpen();
+        assertEquals(driver.switchTo().alert().getText(),negative_msg);
+        driver.switchTo().alert().accept();
+        assertEquals(driver.getCurrentUrl(), url);
+        wait.until(presenceOfElementLocated(By.name("btnLogin")));
     }
     @Test
     public void negativeTestWrongPasswordLogin(){
@@ -83,18 +95,11 @@ public class LoginLogoutTests extends BaseUiTest {
         driver.findElement(By.xpath("//input [@name ='password' ]")).sendKeys(invalid_passw);
         driver.findElement(By.name("btnLogin")).click();
 
-        alertFunc(negative_msg);
-        checkPageLoginIsOpen();
-
-    }
-
-    public void alertFunc(String msg){
-        assertEquals(driver.switchTo().alert().getText(),msg);
+        assertEquals(driver.switchTo().alert().getText(),negative_msg);
         driver.switchTo().alert().accept();
-    }
-    public void checkPageLoginIsOpen(){
         assertEquals(driver.getCurrentUrl(), url);
         wait.until(presenceOfElementLocated(By.name("btnLogin")));
+
     }
 
 

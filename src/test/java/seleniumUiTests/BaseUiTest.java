@@ -1,5 +1,6 @@
 package seleniumUiTests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +13,7 @@ public class BaseUiTest {
 
     @BeforeClass
     public void createDriver(){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Tatiana_Tgr\\.m2\\repository\\webDriver\\chromedriver_win32\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10);
     }
