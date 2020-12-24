@@ -5,8 +5,8 @@
 <suite name="Full regression" configfailurepolicy="continue">
     <test name="Test2">
         <classes>
-            <class name="StackTest"/>
-            <class name="StringFunctionsTest"/>
+            <class name="testNgUnitTests.StackTest"/>
+            <class name="testNgUnitTests.StringFunctionsTest"/>
         </classes>
     </test>
 

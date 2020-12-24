@@ -1,5 +1,7 @@
+package testNgUnitTests;
+
 import com.company.homeworks.HW18.ConvertTemperature;
-import dataProvider.DataProviderCl;
+import testNgUnitTests.dataProvider.DataProviderCl;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

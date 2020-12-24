@@ -1,4 +1,4 @@
-package factoryTests;
+package testNgUnitTests.factoryTests;
 
 import Utils.PropertiesReaderClassLoader;
 import org.testng.annotations.Test;

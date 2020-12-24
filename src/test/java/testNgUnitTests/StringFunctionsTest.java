@@ -1,3 +1,5 @@
+package testNgUnitTests;
+
 import com.company.homeworks.HW18.StringFunctions;
 import org.testng.annotations.Test;
 import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;

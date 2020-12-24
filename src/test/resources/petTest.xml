@@ -6,7 +6,7 @@
     <test name="Test1">
         <parameter name="name" value="Lesya"/>
         <classes>
-            <class name="PetTest"/>
+            <class name="testNgUnitTests.PetTest"/>
         </classes>
     </test>
 

@@ -1,3 +1,5 @@
+package testNgUnitTests;
+
 import com.company.homeworks.HW18.Pet;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -26,10 +28,12 @@ public class PetTest {
         assertNull(cat.whoYounger(cat,null),null);
     }
 
-    @Parameters({"name"})
+    @Parameters()
+            //{"name"})
     @Test
-    public void testHasName(String name){
-        assertTrue(cat.hasName(pets, name));
+    public void testHasName(){
+            //String name){
+        assertTrue(cat.hasName(pets, "Lesya"));
     }
 
     @Test(timeOut = 2000)
