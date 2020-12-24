@@ -1,4 +1,4 @@
-package factoryTests;
+package testNgUnitTests.factoryTests;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
