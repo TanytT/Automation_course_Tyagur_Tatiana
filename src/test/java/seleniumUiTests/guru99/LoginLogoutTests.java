@@ -1,9 +1,11 @@
-package seleniumUiTests;
+package seleniumUiTests.guru99;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import seleniumUiTests.BaseUiTest;
+
 import static org.testng.Assert.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 

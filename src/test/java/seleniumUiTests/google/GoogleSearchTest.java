@@ -1,12 +1,14 @@
-package seleniumUiTests;
+package seleniumUiTests.google;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.openqa.selenium.Keys;
+import seleniumUiTests.BaseUiTest;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class GoogleSearch extends BaseUiTest{
+public class GoogleSearchTest extends BaseUiTest {
 
     String url = "https://www.google.com/";
     String search = "iphone kyiv buy";

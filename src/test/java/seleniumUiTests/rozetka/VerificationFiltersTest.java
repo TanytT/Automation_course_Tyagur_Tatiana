@@ -15,7 +15,8 @@ import static org.testng.Assert.*;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class VerificationFilters extends BaseUiTest {
+public class VerificationFiltersTest extends BaseUiTest {
+    protected static String url = "https://rozetka.com.ua/";
     String search = "samsung";
     String price1 = "5000";
     String price2 = "15000";
@@ -23,7 +24,7 @@ public class VerificationFilters extends BaseUiTest {
     @BeforeMethod
     public void startUp(){
 
-        driver.get(RozetkaCompareMonitorsTest.url);
+        driver.get(url);
         driver.manage().window().maximize();
         driver.findElement(By.cssSelector("input[name=search]")).sendKeys(search+ Keys.ENTER);
 
