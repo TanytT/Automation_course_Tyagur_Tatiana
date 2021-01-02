@@ -1,4 +1,4 @@
-package seleniumUiTests.rozetka;
+package seleniumUiTests.rozetka.rozetkaOldStyle;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Locatable;

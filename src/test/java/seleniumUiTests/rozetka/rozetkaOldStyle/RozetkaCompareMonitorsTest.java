@@ -1,8 +1,9 @@
-package seleniumUiTests.rozetka;
+package seleniumUiTests.rozetka.rozetkaOldStyle;
 
+import com.company.homeworks.HW23.pageObject.rozetkaCompareMonitorsPages.RozetkaHomePage;
+import com.company.homeworks.HW23.pageObject.rozetkaCompareMonitorsPages.RozetkaMonitorsResultPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import seleniumUiTests.BaseUiTest;
@@ -28,21 +29,25 @@ public class RozetkaCompareMonitorsTest extends BaseUiTest {
     @Test
     public void positiveTestCompareMonitors(){
         driver.manage().window().maximize();
-        mouseOver(driver.findElement(By.cssSelector("ul.menu-categories_type_main>li:nth-child(1)>a")));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li:nth-child(1) >a.menu__link[href$=\"monitors/c80089/\"]")));
-        element.click();
+        RozetkaHomePage homePage = new RozetkaHomePage(driver);
+        RozetkaMonitorsResultPage monitorsResultPage = new RozetkaMonitorsResultPage(driver);
+        mouseOver(homePage.chooseMonitorsMenu());
+        homePage.waitForMonitorMenu();
+        homePage.clickOnMonitorsMenu();
 
-        wait.until(presenceOfElementLocated(By.cssSelector("div.goods-tile__inner")));
-        By monitorsBy = By.cssSelector("app-goods-tile-default>div.goods-tile>div.goods-tile__inner");
+        monitorsResultPage.waitForMonitorsList();
+        By monitorListBy = By.cssSelector("div.goods-tile__inner");
         By pricesBy = By.cssSelector("div>div.goods-tile__price>p>span.goods-tile__price-value");
         By namesBy = By.cssSelector("a.goods-tile__heading");
 
-        List<WebElement> listName1 = driver.findElements(monitorsBy);
-        for (WebElement element1 : listName1){
-            monitorPrice1 = Double.parseDouble(element1.findElement(pricesBy).getText().replace(" ",""));
+
+        List<WebElement> listMonitors1 = monitorsResultPage.getAllMonitorsInList();
+        for (WebElement monitor1 : listMonitors1){
+             monitorPrice1 = Double.parseDouble(monitor1.findElement(pricesBy).getText().replace(" ",""));
             if(monitorPrice1<priceConst) {
-                monitorName1 = element1.findElement(namesBy).getText();
-                element1.findElement(namesBy).click();
+                monitorName1 = monitor1.findElement(namesBy).getText();
+                monitor1.findElement(namesBy).click();
+
                 break;
             }
         }
@@ -59,15 +64,18 @@ public class RozetkaCompareMonitorsTest extends BaseUiTest {
         driver.navigate().back();
         wait.until(presenceOfElementLocated(By.cssSelector("div.goods-tile__inner")));
 
-        List<WebElement> listName2 = driver.findElements(monitorsBy);
-        for (WebElement element2 : listName2){
-            monitorPrice2 = Double.parseDouble(element2.findElement(pricesBy).getText().replace(" ",""));
+        List<WebElement> listName2 =  monitorsResultPage.getAllMonitorsInList();
+        for (WebElement monitor2 : listName2){
+            monitorPrice2 = Double.parseDouble(monitor2.findElement(pricesBy).getText().replace(" ",""));
             if(monitorPrice2<monitorPrice1) {
-                monitorName2 = element2.findElement(namesBy).getText();
-                element2.findElement(namesBy).click();
+                monitorName1 = monitor2.findElement(namesBy).getText();
+                monitor2.findElement(namesBy).click();
+
                 break;
             }
         }
+
+
         wait.until(presenceOfElementLocated(buttLabelBy));
         driver.findElement(btnCompBy).click();
         wait.until(presenceOfElementLocated(By.xpath("//button/span[@class='header-actions__button-counter'][text()='2']")));
