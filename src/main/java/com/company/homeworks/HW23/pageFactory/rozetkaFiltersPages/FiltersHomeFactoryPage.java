@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class RozetkaFiltersHomeFactoryPage {
+public class FiltersHomeFactoryPage {
     WebDriver driver;
     WebDriverWait wait;
 
@@ -18,7 +18,7 @@ public class RozetkaFiltersHomeFactoryPage {
     @FindBy (css = "a[href*=\"/mobile-phones\"]>span:first-child")
     private WebElement mobPhone;
 
-    public RozetkaFiltersHomeFactoryPage(WebDriver driver) {
+    public FiltersHomeFactoryPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
         PageFactory.initElements(driver,this);

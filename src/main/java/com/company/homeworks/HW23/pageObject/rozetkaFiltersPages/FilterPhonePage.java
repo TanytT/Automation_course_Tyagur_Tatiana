@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class RozetkaFilterPhonePage {
+public class FilterPhonePage {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -35,7 +35,7 @@ public class RozetkaFilterPhonePage {
     By colorCircle = By.cssSelector("li>a");
     By colorWithAttributeRed = By.cssSelector("span.goods-tile__colors-content");
 
-    public RozetkaFilterPhonePage(WebDriver driver) {
+    public FilterPhonePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
     }

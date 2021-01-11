@@ -7,13 +7,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class RozetkaFiltersHomePage {
+public class FiltersHomePage {
     WebDriver driver;
     WebDriverWait wait;
     By inputSearchBy = By.cssSelector("input[name=search]");
     By mobPhoneBy = By.cssSelector("a[href*=\"/mobile-phones\"]>span:first-child");
 
-    public RozetkaFiltersHomePage(WebDriver driver) {
+    public FiltersHomePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
     }

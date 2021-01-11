@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class RozetkaProductPage {
+public class ProductPage {
     WebDriver driver;
     WebDriverWait wait;
     By buttLabelBy = By.cssSelector("span.buy-button__label");
@@ -19,7 +19,7 @@ public class RozetkaProductPage {
     By monitorsBtnInCompareAlertBy = By.cssSelector("li.comparison-modal__item>.comparison-modal__link");
     By compareBtnActiveBy = By.cssSelector("button.compare-button_state_active");
 
-    public RozetkaProductPage(WebDriver driver) {
+    public ProductPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
     }

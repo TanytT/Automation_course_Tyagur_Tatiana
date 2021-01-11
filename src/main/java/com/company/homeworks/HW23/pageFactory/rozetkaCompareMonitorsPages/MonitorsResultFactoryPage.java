@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class RozetkaMonitorsResultFactoryPage {
+public class MonitorsResultFactoryPage {
     WebDriver driver;
     WebDriverWait wait;
     @FindBy(css="svg.show-more__icon")
@@ -21,7 +21,7 @@ public class RozetkaMonitorsResultFactoryPage {
     @FindBy(css = "div.goods-tile__inner>a.goods-tile__heading")
     private List<WebElement> monitorListNames;
 
-    public RozetkaMonitorsResultFactoryPage(WebDriver driver) {
+    public MonitorsResultFactoryPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
         PageFactory.initElements(driver,this);
@@ -31,15 +31,21 @@ public class RozetkaMonitorsResultFactoryPage {
         wait.until(visibilityOf(showMoreBtn));
     }
 
-    public List<WebElement> getMonitorsInListPrices(){
-        return monitorListPrices;
+    public String[] findFirstMonitor(Double priceConst){
+        List<WebElement> listMonitors1 = monitorListPrices;
+        return searchMonitorByPrice(listMonitors1, priceConst);
+    }
+
+    public String[] findSecondMonitor(Double price){
+        List<WebElement> listMonitor2 =  monitorListPrices;
+        return searchMonitorByPrice(listMonitor2, price);
     }
 
     public List<WebElement> getMonitorsInListNames(){
         return monitorListNames;
     }
 
-    public String[] searchMonitorByPrice(List<WebElement> listPrices, Double priceConst){
+    private String[] searchMonitorByPrice(List<WebElement> listPrices, Double priceConst){
         String[] resMonitor = new String[2];
         for (int i=0; i<listPrices.size(); i++){
             String curPrice =listPrices.get(i).getText();

@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class RozetkaFilterPhoneFactoryPage {
+public class FilterPhoneFactoryPage {
     WebDriver driver;
     WebDriverWait wait;
 
@@ -50,7 +50,7 @@ public class RozetkaFilterPhoneFactoryPage {
     @FindBy(css = "div.goods-tile__colors>ul>li>a>span:first-child")
     private List<WebElement> listOfAllColors;
 
-    public RozetkaFilterPhoneFactoryPage(WebDriver driver) {
+    public FilterPhoneFactoryPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
         PageFactory.initElements(driver,this);

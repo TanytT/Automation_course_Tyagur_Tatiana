@@ -6,13 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RozetkaHomePage {
+public class HomePage {
     WebDriver driver;
     WebDriverWait wait;
     By mainMenuBy = By.cssSelector("ul.menu-categories_type_main>li:nth-child(1)>a");
     By monitorsMenuBy = By.cssSelector("li:first-child>a[href$=\"monitors/c80089/\"]");
 
-    public RozetkaHomePage(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
     }

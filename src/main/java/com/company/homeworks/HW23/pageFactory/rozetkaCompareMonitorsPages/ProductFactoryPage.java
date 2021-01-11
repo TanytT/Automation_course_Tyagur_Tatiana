@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class RozetkaProductFactoryPage {
+public class ProductFactoryPage {
     WebDriver driver;
     WebDriverWait wait;
 
@@ -28,7 +28,7 @@ public class RozetkaProductFactoryPage {
     @FindBy(css = "li.comparison-modal__item>.comparison-modal__link")
     private WebElement monitorsBtnInCompareAlert;
 
-    public RozetkaProductFactoryPage(WebDriver driver) {
+    public ProductFactoryPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
         PageFactory.initElements(driver,this);

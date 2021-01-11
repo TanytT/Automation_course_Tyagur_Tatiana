@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class RozetkaComparePage {
+public class ComparePage {
     WebDriver driver;
     WebDriverWait wait;
     By cntCompareMonitBy = By.xpath("//rz-products-section/ul/li");
@@ -16,7 +16,7 @@ public class RozetkaComparePage {
     By monitor2By = By.cssSelector("li:first-child div.product__heading>a");
     By price2By = By.cssSelector("li:first-child div.product__prices>div");
 
-    public RozetkaComparePage(WebDriver driver) {
+    public ComparePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
     }

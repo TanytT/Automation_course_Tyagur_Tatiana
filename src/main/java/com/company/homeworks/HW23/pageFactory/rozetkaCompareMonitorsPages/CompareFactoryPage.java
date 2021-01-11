@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class RozetkaCompareFactoryPage {
+public class CompareFactoryPage {
     WebDriver driver;
     WebDriverWait wait;
     @FindBy(xpath = "//rz-products-section/ul/li")
@@ -27,7 +27,7 @@ public class RozetkaCompareFactoryPage {
     @FindBy(css = "li:first-child div.product__prices>div")
     private WebElement price2;
 
-    public RozetkaCompareFactoryPage(WebDriver driver) {
+    public CompareFactoryPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver,10);
         PageFactory.initElements(driver,this);
