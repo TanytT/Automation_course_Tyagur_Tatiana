@@ -97,6 +97,13 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.15.1</version>
+        </dependency>
+
+
 
     </dependencies>
 
