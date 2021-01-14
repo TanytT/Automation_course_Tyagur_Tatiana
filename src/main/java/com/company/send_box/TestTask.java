@@ -40,6 +40,8 @@ public class TestTask {
         System.out.println(res);
 
     }
+
+
     public static String areYouPlayingBanjo(String name) {
         if(name.toLowerCase().charAt(0)=='r')
             return name+" plays banjo";
