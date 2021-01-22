@@ -1,4 +1,4 @@
-package com.company.homeworks.HW25.citrusPages.basket;
+package com.company.homeworks.HW25.citrusPages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;

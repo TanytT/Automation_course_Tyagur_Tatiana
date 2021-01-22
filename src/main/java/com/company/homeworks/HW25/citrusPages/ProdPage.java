@@ -1,4 +1,4 @@
-package com.company.homeworks.HW25.citrusPages.basket;
+package com.company.homeworks.HW25.citrusPages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.company.homeworks.HW25.citrusFragments.BasketFragment;
@@ -6,7 +6,7 @@ import com.company.homeworks.HW25.citrusFragments.BasketFragment;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$$x;
 
-public class ProdPage extends BasePage{
+public class ProdPage extends BasePage {
 
     BasketFragment basketFragment = new BasketFragment();
 

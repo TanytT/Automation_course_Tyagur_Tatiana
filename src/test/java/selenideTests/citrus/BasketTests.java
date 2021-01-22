@@ -2,10 +2,10 @@ package selenideTests.citrus;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.company.homeworks.HW25.citrusPages.basket.ComparisonPage;
-import com.company.homeworks.HW25.citrusPages.basket.HomePage;
-import com.company.homeworks.HW25.citrusPages.basket.ProdPage;
-import com.company.homeworks.HW25.citrusPages.basket.ProductListPage;
+import com.company.homeworks.HW25.citrusPages.ComparisonPage;
+import com.company.homeworks.HW25.citrusPages.HomePage;
+import com.company.homeworks.HW25.citrusPages.ProdPage;
+import com.company.homeworks.HW25.citrusPages.ProductListPage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -20,6 +20,8 @@ public class BasketTests {
 
     String productName = "Apple iPhone 12 128GB";
     String productN = "Apple iPhone";
+    String nameApple = "Apple";
+    String smartf = "Смартфоны";
 
     @BeforeClass
     public void setup(){
@@ -30,6 +32,7 @@ public class BasketTests {
         productListPage = new ProductListPage();
         productPage = new ProdPage();
         comparisonPage = new ComparisonPage();
+
 
     }
 
@@ -43,8 +46,8 @@ public class BasketTests {
     public void addToBasketUsingProductPageTest(){
         homePage.waitForLoad()
                 .closePopUp()
-                .hoverMenuLine("Смартфоны")
-                .clickOnLinkInMenu("Apple");
+                .hoverMenuLine(smartf)
+                .clickOnLinkInMenu(nameApple);
         productListPage.waitForLoad()
                     .closePopUp()
                     .clickOnProductByName(productName);
@@ -86,10 +89,8 @@ public class BasketTests {
         String productName2 = productListPage.readProductNameFromList(1);
         String totalPrice = productListPage.countTotalPriceInBasket(productPrice1,productPrice2);
 
-        productListPage.getBasketFragment().addProductsToBasket(0)
-                .getCloseBasketButton();
-        productListPage.getBasketFragment().addProductsToBasket(1)
-                .getCloseBasketButton();
+        productListPage.getBasketFragment().addProductsToBasket(0).getCloseBasketButton();
+        productListPage.getBasketFragment().addProductsToBasket(1).getCloseBasketButton();
         productListPage.getBasketFragment().getOpenBasketFromHeader();
 
         productListPage.getBasketFragment().getBasketWidget().shouldBe(Condition.visible);
