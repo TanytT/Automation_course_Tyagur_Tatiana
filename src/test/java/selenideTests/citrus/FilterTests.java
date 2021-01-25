@@ -1,10 +1,11 @@
 package selenideTests.citrus;
 
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.company.homeworks.HW25.citrusPages.HomePage;
-import com.company.homeworks.HW25.citrusPages.ProductListPage;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import com.company.homeworks.HW25.citrusSteps.HomePageSteps;
+import com.company.homeworks.HW25.citrusSteps.ProductListPageSteps;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,8 +15,8 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class FilterTests {
 
-    HomePage homePage;
-    ProductListPage productListPage;
+    HomePageSteps homePageSteps;
+    ProductListPageSteps productListPageSteps;
     private String fromPrice = "5000";
     private String toPrice = "20000";
     private String nameSamsung = "Samsung";
@@ -31,8 +32,9 @@ public class FilterTests {
         Configuration.baseUrl = "https://www.citrus.ua";
         Configuration.startMaximized = true;
         open("/");
-        homePage = new HomePage();
-        productListPage = new ProductListPage();
+        homePageSteps = new HomePageSteps();
+        productListPageSteps = new ProductListPageSteps();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
 
     }
 
@@ -44,44 +46,27 @@ public class FilterTests {
 
     @Test
     public void usePriceFilterTest(){
-        homePage.waitForLoad()
-                .closePopUp()
-                .hoverMenuLine(nameTV)
-                .clickOnLinkInMenuTV(nameSamsung);
-        productListPage.waitForLoad()
-                .closePopUp();
-        productListPage.fillInSearchPriceFilter(fromPrice,0).waitForLoad();
-        productListPage.fillInSearchPriceFilter(toPrice,1).waitForLoad().closePopUp();
-        productListPage.getAllProductNames().filterBy(Condition.text(nameSamsung)).shouldHaveSize(10);
-        productListPage.getAllProductPrices(fromPrice,toPrice).shouldHave(Condition.text("16 999"));
+        homePageSteps.clickOnLinkInMenuTV(3,nameSamsung);
+        productListPageSteps.pageProductListLoad();
+        productListPageSteps.fillInPriceFilters(fromPrice,0,toPrice,1);
+        productListPageSteps.verifyPriceAndNameOfProducts(nameSamsung,fromPrice,toPrice);
 
     }
     @Test
     public void useMemoryFilterTest() {
-        homePage.waitForLoad()
-                .closePopUp()
-                .hoverMenuLine(nameSmartf)
-                .clickOnLinkInMenu(nameSamsung);
-        productListPage.waitForLoad()
-                .closePopUp();
-        productListPage.checkFilter(memory1).waitForLoad();
-        productListPage.checkFilter(memory2).waitForLoad();
-        productListPage.getAllProductNames().filterBy(Condition.text(nameSamsung)).shouldHaveSize(47);
-        productListPage.getAllProductNames()
-                .filterBy(Condition.or("64GbOR128Gb",Condition.text("64Gb"),Condition.text("128Gb"))).shouldHaveSize(47);
+        homePageSteps.clickOnLinkInMenu(2,nameSamsung);
+        productListPageSteps.pageProductListLoad();
+        productListPageSteps.checkFilter(4,4);
+        productListPageSteps.checkFilter(4,5);
+        productListPageSteps.verifyMemoryAndNameOfProducts(nameSamsung);
     }
 
     @Test
     public void useBodyMaterialFilterTest() {
-        homePage.waitForLoad()
-                .closePopUp()
-                .hoverMenuLine(nameSmartf)
-                .clickOnLinkInMenu(nameMotorola);
-        productListPage.waitForLoad()
-                .closePopUp();
-        productListPage.checkFilter(material).waitForLoad();
-        int cnt=productListPage.checkMaterial(material);
-        productListPage.getAllProductNames().shouldHaveSize(cnt);
-        productListPage.getAllProductNames().filterBy(Condition.text(nameMotorola)).shouldHaveSize(3);
+        homePageSteps.clickOnLinkInMenu(2,nameMotorola);
+        productListPageSteps.pageProductListLoad();
+        productListPageSteps.checkFilter(14,3);
+        productListPageSteps.verifyMaterialAndNameOfProducts(nameMotorola);
+
     }
 }

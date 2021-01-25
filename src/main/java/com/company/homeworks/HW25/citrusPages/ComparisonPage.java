@@ -7,13 +7,12 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class ComparisonPage extends BasePage {
 
-    BasketFragment basketFragment = new BasketFragment();
-    ElementsCollection productListInCompare = $$(".relative ");
-    ElementsCollection namesOfNotes = $$(".header-block .name");
+    private BasketFragment basketFragment = new BasketFragment();
+    private ElementsCollection productListInCompare = $$(".relative ");
+    private ElementsCollection namesOfNotes = $$(".header-block .name");
 
-    public ComparisonPage closePopUp() {
+    public void closePopUp() {
         super.closePopUp();
-        return this;
     }
 
     public ComparisonPage waitForLoad(){

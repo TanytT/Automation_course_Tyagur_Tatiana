@@ -8,14 +8,13 @@ import static com.codeborne.selenide.Selenide.$$x;
 
 public class ProdPage extends BasePage {
 
-    BasketFragment basketFragment = new BasketFragment();
+    private BasketFragment basketFragment = new BasketFragment();
 
-    SelenideElement productPrice = $$x("//div[@class = 'price']/span/span").first();
-    SelenideElement buyButton = $$("div.normal button.btn.orange.full").first();
+    private SelenideElement productPrice = $$(".buy-section__new-price").first();
+    private SelenideElement buyButton = $$(".buy-section__buy-btn").first();
 
     public String readProductPrice() {
-
-        return productPrice.getText();
+        return productPrice.getText().substring(0,6).trim();
     }
 
     public ProdPage clickBuyButton() {

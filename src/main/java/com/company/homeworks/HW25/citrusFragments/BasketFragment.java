@@ -2,7 +2,6 @@ package com.company.homeworks.HW25.citrusFragments;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.company.homeworks.HW25.citrusPages.ProductListPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -28,18 +27,16 @@ public class BasketFragment {
         return basketTotalPrice;
     }
 
-    public SelenideElement getCloseBasketButton() {
+    public void closeBasketButton() {
         closeBasketButton.click();
-        return null;
     }
 
     public ElementsCollection getProductPricesInBasket() {
         return productPricesInBasket;
     }
 
-    public ProductListPage getOpenBasketFromHeader() {
+    public void openBasketFromHeader() {
         basketInMenuButton.click();
-        return null;
     }
 
     public BasketFragment addProductsToBasket(int index) {

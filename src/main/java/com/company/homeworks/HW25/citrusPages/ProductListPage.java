@@ -10,28 +10,26 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class ProductListPage extends BasePage {
 
-    BasketFragment basketFragment = new BasketFragment();
-    ElementsCollection allProductsOnPage = $$(".short-itm-desc");
-    ElementsCollection allComparisonButtons = $$(".icon-comparison2");
-    ElementsCollection allNamesOfProducts = $$(".product-card__name");
-    ElementsCollection allPricesOfProducts = $$(".prices__price .price");
-    ElementsCollection filterPriceField = $$(".el-input__inner");
-    SelenideElement compareCounter = $(".counter");
-    ElementsCollection productProperties = $$(".properties__items");
+    private BasketFragment basketFragment = new BasketFragment();
+    private ElementsCollection allProductsOnPage = $$(".short-itm-desc");
+    private ElementsCollection allComparisonButtons = $$(".icon-comparison2");
+    private ElementsCollection allNamesOfProducts = $$(".product-card__name");
+    private ElementsCollection allPricesOfProducts = $$(".prices__price .price");
+    private ElementsCollection filterPriceField = $$(".el-input__inner");
+    private SelenideElement compareCounter = $(".counter");
+    private ElementsCollection productProperties = $$(".product-card__footer");
 
     public ProductListPage clickOnProductByName(String productName) {
         $x("//span[contains(text(),'"+productName+"')]").click();
         return this;
     }
 
-    public ProductListPage waitForLoad(){
-        super.waitForLoad();
-        return this;
+    public BasePage waitForLoad(){
+        return super.waitForLoad();
     }
 
-    public ProductListPage closePopUp() {
+    public void closePopUp() {
         super.closePopUp();
-        return this;
     }
 
     public String readProductPriceFromListByName(String productName) {
@@ -96,16 +94,19 @@ public class ProductListPage extends BasePage {
     return allPricesOfProducts.get(cnt-1);
     }
 
-    public ProductListPage checkFilter(String filter) {
-        $x("//a[text()='"+filter+"']").click();
+    public ProductListPage checkFilter(int ind1, int ind2) {
+        $(".base__body div:nth-child("+ind1+") li:nth-child("+ind2+")").click();
         return this;
     }
 
-    public int checkMaterial(String material){
+    public int checkMaterial(){
+        this.hoverOnCompButton(1).closePopUp();
         int cnt=0;
         for(int i=0; i<productProperties.size(); i++){
-            productProperties.get(i).$x("//span[contains(text(),'"+ material +"')]");
-            cnt++;
+            $$(".icon-comparison2").get(i+1).hover();
+            if($$("ul.properties__items li:first-child span:last-child").get(i).getText().contains("Металл")){
+                cnt++;
+            }
         }
         return cnt;
     }
@@ -117,5 +118,9 @@ public class ProductListPage extends BasePage {
     public ProductListPage hoverOnCompButton(int indexOfProd) {
         allComparisonButtons.get(indexOfProd).hover();
         return this;
+    }
+
+    public ElementsCollection getAllProductPropertyMeterial() {
+        return productProperties;
     }
 }

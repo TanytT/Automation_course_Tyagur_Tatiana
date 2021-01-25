@@ -1,6 +1,5 @@
 package com.company.homeworks.HW25.citrusPages;
 
-import com.codeborne.selenide.SelenideElement;
 import com.company.homeworks.HW25.citrusFragments.SearchFragment;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -8,11 +7,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class HomePage extends BasePage {
 
-    SearchFragment searchFragment = new SearchFragment();
-    SelenideElement linkInMenuNotebooks = $(".item li:nth-child(5)>a[href^='/noutbuki']");
+    private SearchFragment searchFragment = new SearchFragment();
 
-    public HomePage hoverMenuLine(String menuLineText) {
-        $x("//div[contains(@class,'show')]//span[contains(text(),'"+menuLineText+"')]").hover();
+    public HomePage hoverMenuLine(int indexOfcategory) {
+        $("div.menu--desktop__drop-list.show li:nth-child("+indexOfcategory+") span.title").hover();
         return this;
     }
 
@@ -30,17 +28,16 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage closePopUp() {
+    public void closePopUp() {
         super.closePopUp();
-        return this;
     }
 
     public SearchFragment getSearchFragment() {
         return searchFragment;
     }
 
-    public HomePage clickOnLinkInMenuNotebooks() {
-        linkInMenuNotebooks.click();
+    public HomePage clickOnLinkInMenuNotebooks(String name) {
+        $("div.menu--desktop__drop-list.show a[title*='"+name+"']>span").click();
         return this;
     }
 }

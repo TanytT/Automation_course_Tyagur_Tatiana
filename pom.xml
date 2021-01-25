@@ -7,12 +7,20 @@
     <groupId>com.company</groupId>
     <artifactId>Automation_course_Tyagur_Tatiana</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <description>My project automation course</description>
     <developers>
         <developer>
             <name>Tatiana_Tyagur</name>
         </developer>
     </developers>
+    <properties>
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <aspectj.version>1.9.5</aspectj.version>
+        <allure-testng.version>2.13.2</allure-testng.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
@@ -25,6 +33,34 @@
                     <source>11</source>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                   <argLine>
+                       -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                    <configuration>
+                        <reportVersion>2.10.0</reportVersion>
+                        <resultsDirectory>${project.basedir}/target/allure-results</resultsDirectory>
+                        <reportDirectory>${project.basedir}/target/allure-reports</reportDirectory>
+                    </configuration>
+            </plugin>
+
         </plugins>
         <filters>
             <filter>src/main/resources/env/config.${env}.properties</filter>
@@ -102,7 +138,27 @@
             <artifactId>selenide</artifactId>
             <version>5.15.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure-testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>${allure-testng.version}</version>
+        </dependency>
 
 
     </dependencies>
