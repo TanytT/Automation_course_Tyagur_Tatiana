@@ -159,7 +159,11 @@
             <artifactId>allure-selenide</artifactId>
             <version>${allure-testng.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.0.0</version>
+        </dependency>
 
     </dependencies>
 
