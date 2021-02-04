@@ -159,6 +159,12 @@
             <artifactId>allure-selenide</artifactId>
             <version>${allure-testng.version}</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
+        </dependency>
+
 
 
     </dependencies>
