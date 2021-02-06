@@ -21,7 +21,7 @@ public class NumbersOperationsTests {
         assertFalse(numbersOperations.isPrimeNumb(24),"The number is prime");
     }
     @Test
-    @Step("Find second maw value in array")
+    @Step("Find second maw value in array ")
     public void secondMaxValuePositiveTest(){
         int [] arr = {5,1,9,9,3,5,100,2};
         assertEquals(numbersOperations.secondMaxValue(arr),9);

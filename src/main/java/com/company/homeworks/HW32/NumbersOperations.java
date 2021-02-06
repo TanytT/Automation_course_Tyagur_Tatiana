@@ -15,12 +15,11 @@ public class NumbersOperations {
     }
 
     public boolean isPrimeNumb(int numb){
-        boolean fl =true;
         for(int i=2; i<numb; i++) {
             if (numb % i ==0){
-                fl=false;
+                return false;
             }
         }
-        return fl;
+        return true;
     }
 }

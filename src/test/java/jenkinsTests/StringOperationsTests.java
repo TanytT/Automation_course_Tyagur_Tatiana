@@ -11,12 +11,12 @@ public class StringOperationsTests {
 
     @Test
     public void reverseStringPositiveTest(){
-        assertEquals(stringOperations.reverseStr("Hello world!"),"!dlrow olleH");
+        assertEquals(stringOperations.reverseString("Hello world!"),"!dlrow olleH");
     }
 
     @Test
     public void isPalindromePositiveTest(){
-        assertTrue(stringOperations.isPalindrome("Ababa baba"),"String is not palindrome");
+        assertTrue(stringOperations.isPalindrome("Ababa baba "),"String is not palindrome");
     }
     @Test
     public void isPalindromeNegativeTest(){

@@ -18,7 +18,7 @@ public class StringOperations {
         return true;
     }
 
-    public String reverseStr(String str){
+    public String reverseString(String str){
         char[] chArr = str.toCharArray();
         char [] chRes = new char[str.length()];
         for(int i=0; i<str.length(); i++){

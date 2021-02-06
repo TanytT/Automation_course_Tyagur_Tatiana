@@ -3,7 +3,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All tests" configfailurepolicy="continue">
-    <test name="TestsStringAndNumbersOperations">
+    <test name="TestsStringAndNumbersOperations ">
         <classes>
             <class name="jenkinsTests.NumbersOperationsTests"/>
             <class name="jenkinsTests.StringOperationsTests"/>
