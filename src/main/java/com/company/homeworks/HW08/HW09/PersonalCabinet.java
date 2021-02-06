@@ -12,8 +12,8 @@ public class PersonalCabinet extends Client{
         logger.log("Check the movies are shown ");
      }
 
-     public void bonuses(){
-        logger.log("Click the \"ОТРИМАТИ ІСТОРІЮ БОНУСІВ НА E-MAIL\" link");
-        logger.log("Check the message about sending");
-     }
+//     public void bonuses(){
+//        logger.log("Click the \"ОТРИМАТИ ІСТОРІЮ БОНУСІВ НА E-MAIL\" link");
+//        logger.log("Check the message about sending");
+//     }
 }

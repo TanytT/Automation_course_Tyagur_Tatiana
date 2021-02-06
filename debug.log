@@ -2,3 +2,21 @@
 [1225/150334.334:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
 [1225/150334.335:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
 [1229/231027.838:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0111/221057.423:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0111/221057.424:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0115/132837.018:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0115/132837.069:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0122/194705.181:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0122/194705.182:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0122/202529.312:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0122/202529.313:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0123/180839.728:ERROR:file_io_win.cc(162)] CreateFile C:\Users\TATIAN~1\AppData\Local\Temp\scoped_dir9896_2006604028\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[0123/180839.733:ERROR:file_io_win.cc(171)] CreateFile C:\Users\TATIAN~1\AppData\Local\Temp\scoped_dir9896_2006604028\Crashpad\reports\5744ad61-f31d-4a5d-9782-00679d71caef.dmp: Системе не удается найти указанный путь. (0x3)
+[0123/180839.733:ERROR:crash_report_exception_handler.cc(99)] PrepareNewCrashReport failed
+[0124/103602.351:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0124/103602.352:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0125/230136.723:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0125/230136.725:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0126/181147.177:ERROR:file_io_win.cc(162)] CreateFile C:\Users\TATIAN~1\AppData\Local\Temp\scoped_dir13688_103168597\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[0126/181147.181:ERROR:file_io_win.cc(171)] CreateFile C:\Users\TATIAN~1\AppData\Local\Temp\scoped_dir13688_103168597\Crashpad\reports\44a3bc2f-135d-44a1-9f30-5d19ebd33323.dmp: Системе не удается найти указанный путь. (0x3)
+[0126/181147.181:ERROR:crash_report_exception_handler.cc(99)] PrepareNewCrashReport failed

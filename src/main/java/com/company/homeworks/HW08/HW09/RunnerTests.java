@@ -15,7 +15,7 @@ public class RunnerTests {
         System.out.println("----------------------------------------");
 
         perCab.setUp();
-        perCab.bonuses();
+        //perCab.bonuses();
         perCab.cleanUp();
         System.out.println("----------------------------------------");
 

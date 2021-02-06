@@ -1,4 +1,4 @@
-package seleniumUiTests.rozetka.rozetkaOldStyle;
+/*package seleniumUiTests.rozetka.rozetkaOldStyle;
 
 import com.company.homeworks.HW23.pageObject.rozetkaCompareMonitorsPages.RozetkaHomePage;
 import com.company.homeworks.HW23.pageObject.rozetkaCompareMonitorsPages.RozetkaMonitorsResultPage;
@@ -101,3 +101,4 @@ public class RozetkaCompareMonitorsTest extends BaseUiTest {
         assertEquals(pr1,monitorPrice1);
     }
 }
+*/

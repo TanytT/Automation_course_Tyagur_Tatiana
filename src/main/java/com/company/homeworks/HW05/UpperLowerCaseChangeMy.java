@@ -1,6 +1,6 @@
 package com.company.homeworks.HW05;
 
-public class UpperLowerСaseСhange {
+public class UpperLowerCaseChangeMy {
 
     public static String stringsFunct(String mode, String str){
         String res = "";
